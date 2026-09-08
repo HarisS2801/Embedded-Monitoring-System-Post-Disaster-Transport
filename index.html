@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relief Monitoring Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle sidebar">☰</button>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">DR</div>
+        <div>
+          <h2>Disaster Relief</h2>
+          <p>Environmental Monitoring</p>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#overview">Overview</a>
+        <a href="#charts">Charts</a>
+        <a href="#history">History</a>
+        <a href="#status">Status</a>
+      </nav>
+
+      <div class="device-box" id="status">
+        <h3>ESP32 Device</h3>
+        <p><span>Connection:</span> <strong id="deviceConnection">Checking...</strong></p>
+        <p><span>API:</span> <strong id="deviceApi">--</strong></p>
+        <p><span>Last Update:</span> <strong id="lastUpdate">--</strong></p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1>Live Monitoring Dashboard</h1>
+          <p>Real-time monitoring of disaster relief storage conditions</p>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="themeToggleBtn">Toggle Theme</button>
+          <button id="refreshBtn">Refresh Now</button>
+        </div>
+      </header>
+
+      <section class="hero" id="overview">
+        <div class="hero-card">
+          <div>
+            <p class="eyebrow">System Status</p>
+            <h2 id="heroStatus">Waiting for live data...</h2>
+            <p id="heroSubtext">Monitoring temperature, humidity, and water level sensor readings in real time.</p>
+          </div>
+          <div class="hero-pulse">
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-grid">
+        <div class="metric-card temperature" id="tempCard">
+          <p>Temperature</p>
+          <h3 id="temperatureValue">-- °C</h3>
+          <span>Current ambient temperature</span>
+          <div class="card-alert safe-text" id="tempAlertText">Safe</div>
+        </div>
+
+        <div class="metric-card humidity" id="humidityCard">
+          <p>Humidity</p>
+          <h3 id="humidityValue">-- %</h3>
+          <span>Current relative humidity</span>
+          <div class="card-alert safe-text" id="humidityAlertText">Safe</div>
+        </div>
+
+        <div class="metric-card water1" id="sensor1Card">
+          <p>Water Sensor 1</p>
+          <h3 id="sensor1Value">--</h3>
+          <span>Primary ADC reading</span>
+          <div class="card-alert safe-text" id="sensor1AlertText">Safe</div>
+        </div>
+
+        <div class="metric-card water2" id="sensor2Card">
+          <p>Water Sensor 2</p>
+          <h3 id="sensor2Value">--</h3>
+          <span>Secondary ADC reading</span>
+          <div class="card-alert safe-text" id="sensor2AlertText">Safe</div>
+        </div>
+      </section>
+
+      <section class="warning-section">
+        <div class="warning-panel safe" id="warningPanel">
+          <div>
+            <p class="warning-label">Warning Message</p>
+            <h2 id="warningText">Waiting for data...</h2>
+          </div>
+          <div class="warning-badge" id="warningBadge">SAFE</div>
+        </div>
+      </section>
+
+      <section class="charts-section" id="charts">
+        <div class="chart-card">
+          <div class="section-header">
+            <h2>Temperature Trend</h2>
+            <p>Recent live readings</p>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="temperatureChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="section-header">
+            <h2>Humidity Trend</h2>
+            <p>Recent live readings</p>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="humidityChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card wide">
+          <div class="section-header">
+            <h2>Water Sensor Trend</h2>
+            <p>Sensor 1 vs Sensor 2</p>
+          </div>
+          <div class="chart-canvas-wrap wide-chart-wrap">
+            <canvas id="waterChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-section" id="history">
+        <div class="history-card">
+          <div class="section-header">
+            <h2>Recent Reading History</h2>
+            <p>Latest 10 updates</p>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Temperature (°C)</th>
+                  <th>Humidity (%)</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Warning</th>
+                </tr>
+              </thead>
+              <tbody id="historyTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="history-mobile-list" id="historyMobileList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
