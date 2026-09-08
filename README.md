@@ -350,3 +350,67 @@ The complete monitoring workflow can be summarized as follows:
 ```
 
 ---
+## 👨‍💻 My Contributions
+
+- Designed the complete embedded monitoring architecture.
+- Developed the ATmega328P-based embedded system.
+- Programmed the microcontroller using Embedded C.
+- Integrated temperature and humidity sensors.
+- Implemented threshold-based alert mechanisms.
+- Implemented UART communication.
+- Developed the real-time monitoring interface.
+- Performed hardware integration and system testing.
+- Debugged and optimized the complete system.
+- Designed the system for portable and low-power operation.
+
+---
+
+## 🧠 Skills Demonstrated
+
+- Embedded Systems
+- Embedded C
+- ATmega328P Programming
+- Microcontroller Architecture
+- Sensor Interfacing
+- UART Communication
+- Hardware-Software Integration
+- Electronic Circuit Design
+- Real-Time Monitoring
+- Low-Power System Design
+- Hardware Debugging
+- System Testing
+
+---
+
+## 🚀 Future Improvements
+
+Possible future enhancements include:
+
+- Wireless communication using ESP32/LoRa
+- GPS-based supply tracking
+- Cloud-based environmental monitoring
+- Mobile application integration
+- IoT-based remote monitoring
+- Data logging and historical analysis
+- Battery and power-consumption monitoring
+- Predictive analysis of environmental conditions
+
+---
+
+## 🎓 Academic Information
+
+**Project Title**
+
+Embedded Monitoring System for Post-Disaster Supply Transport
+
+**Institution**
+
+University of Jaffna
+
+**Project Area**
+
+Embedded Systems and Design
+
+**Project Duration**
+
+February 2026 – April 2026
