@@ -414,3 +414,14 @@ Embedded Systems and Design
 **Project Duration**
 
 February 2026 – April 2026
+
+# 👤 Author
+
+**Haris**
+
+Final Year Undergraduate
+
+Department of Electrical and Electronic Engineering
+
+University of Jaffna
+
